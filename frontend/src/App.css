@@ -1,0 +1,329 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* COMPLETELY UNDESIGNED - RAW DEVELOPER CODE */
+
+:root {
+  --bg: #0d1117;
+  --text: #c9d1d9;
+  --text-light: #8b949e;
+  --blue: #0969da;
+  --red: #da3633;
+  --green: #1a7f37;
+  --yellow: #9e6a03;
+  --border: #30363d;
+  --bg-2: #161b22;
+  --bg-3: #21262d;
+}
+
+[data-theme="light"] {
+  --bg: #ffffff;
+  --text: #24292f;
+  --text-light: #57606a;
+  --blue: #0969da;
+  --red: #da3633;
+  --green: #1a7f37;
+  --yellow: #9e6a03;
+  --border: #d0d7de;
+  --bg-2: #f6f8fa;
+  --bg-3: #eaeef2;
+}
+
+html {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+input, button, textarea, select {
+  font-family: inherit;
+  color: inherit;
+}
+
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  background: var(--bg-2);
+  border-bottom: 1px solid var(--border);
+  z-index: 50;
+}
+
+.navbar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-icon {
+  width: 32px;
+  height: 32px;
+  background: var(--blue);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.logo-text {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--text);
+}
+
+.nav-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.theme-toggle, .nav-reset-btn {
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  color: var(--text-light);
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.theme-toggle:hover, .nav-reset-btn:hover {
+  background: var(--bg-2);
+  color: var(--text);
+}
+
+.main-content {
+  flex: 1;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.hero-section {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0 0 1rem 0;
+  color: var(--text);
+}
+
+.hero-highlight {
+  color: var(--blue);
+}
+
+.hero-subtitle {
+  font-size: 14px;
+  color: var(--text-light);
+  margin: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.stepper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.step-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.step-dot {
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--border);
+  background: var(--bg-2);
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.step-dot.active {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+.step-dot.done {
+  background: var(--blue);
+  color: white;
+  border-color: var(--blue);
+}
+
+.step-label {
+  font-size: 12px;
+  color: var(--text-light);
+  white-space: nowrap;
+}
+
+.step-line {
+  width: 40px;
+  height: 1px;
+  background: var(--border);
+}
+
+.step-line.done {
+  background: var(--blue);
+}
+
+.glass-panel {
+  background: var(--bg);
+  border: 1px solid var(--border);
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border);
+  background: var(--bg-2);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.btn:hover {
+  background: var(--bg-3);
+}
+
+.btn-primary {
+  background: var(--blue);
+  color: white;
+  border-color: var(--blue);
+}
+
+.btn-primary:hover {
+  filter: brightness(0.95);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text);
+}
+
+.btn-subtle {
+  background: transparent;
+  border: none;
+  color: var(--text-light);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.gradient-text {
+  color: var(--blue);
+  font-weight: bold;
+}
+
+.section-upload {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.section-editor {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.section-results {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1rem;
+  }
+  .stepper {
+    gap: 0.5rem;
+  }
+  .navbar-inner {
+    padding: 0.75rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding: 1rem 0.75rem;
+  }
+
+  .hero-title {
+    font-size: 1.35rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .stepper {
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .step-item {
+    gap: 0.35rem;
+  }
+
+  .step-label {
+    font-size: 0.6rem;
+  }
+}
+
+/* ──────────────────────────────────────────────────────────────────────────────
+   FOOTER
+   ────────────────────────────────────────────────────────────────────────────── */
+
+.app-footer {
+  text-align: center;
+  padding: 2.5rem;
+  color: var(--text-light);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--border);
+  margin-top: auto;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
